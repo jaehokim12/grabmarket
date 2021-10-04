@@ -20,14 +20,29 @@ const MainPage = () => {
   }, []);
     return (
         <div className="MainPageContainer">
+          <div id ="header">
+            <div id="header-area">
+              <img src="images/icons/logo.png"/>
+            </div>
+          </div>
+          <div id="body">
+            <div id="banner">
+              <img src="images/banners/banner1.png"></img>
+            </div>
+            <h1>판매되는 상품들</h1>
+            <div id="product-list">
             {product.map((list,index)=>{
               console.log(list)
 
               return(
-                <img key={index} class="productImg"src={`${list.imageUrl}`}></img>
+                <div className="product-card">
+                <img key={index} class="product-img"src={`${list.imageUrl}`}></img>
+                </div>
               )
               })
             }
+            </div>
+          </div>
         </div>
     )
 }
