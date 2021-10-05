@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <div id="header">
         <div id="header-area">
-          <img src="images/icons/logo.png" />
+          <img src="/images/icons/logo.png" />
         </div>
       </div>
       <div id="body">

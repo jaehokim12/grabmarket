@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import './Product.css';
 
 function ProducPage() {
   const { id } = useParams();
@@ -29,6 +30,12 @@ function ProducPage() {
       </div>
       <div id="profile-box">
         <img src={'/images/icons/avatar.png'} />
+        <span>{product.seller}</span>
+      </div>
+      <div id="contents-box">
+        <div id="name">{product.name}</div>
+        <div id="price">{`${product.price}원`}</div>
+        <div id="description">{product.description}</div>
       </div>
     </div>
   );
