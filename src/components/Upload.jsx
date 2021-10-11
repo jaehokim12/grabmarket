@@ -1,4 +1,4 @@
-import { Form, Divider, Input, InputNumber, Button } from 'antd';
+import { Form, Divider, Input, InputNumber, Button ,Upload} from 'antd';
 import './Upload.css';
 import { ForkOutlined } from '@ant-design/icons';
 function UploadPage() {
@@ -12,10 +12,15 @@ function UploadPage() {
           name="upload"
           label={<div className="upload-label">상품 사진</div>}
         >
+            <Upload name="image" action ="http://localhost:8080/image"
+                listType="picture"
+                showUploadList={false}
+                >
           <div id="upload-img-placeholder">
             <img src="/images/icons/camera.png" />
             <span>이미지를 업로드해주세요.</span>
           </div>
+          </Upload>
         </Form.Item>
         <Divider />
         <Form.Item
