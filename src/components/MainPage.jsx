@@ -29,11 +29,7 @@ const MainPage = () => {
           return (
             <div className="product-card">
               <Link to={`/products/${list.id}`}>
-                <img
-                  key={index}
-                  class="product-img"
-                  src={`${list.imageUrl}`}
-                ></img>
+                <img key={index} class="product-img" src={`${list.imageUrl}`}></img>
               </Link>
             </div>
           );

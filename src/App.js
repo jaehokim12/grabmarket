@@ -1,15 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
-import "antd/dist/antd.css";
-import MainPage from "./components/MainPage";
-import { Switch, Route, Link, useHistory } from "react-router-dom";
-import UploadPage from "./components/Upload";
-import ProducPage from "./components/Product";
-import { Button } from "antd";
-import { DownloadOutlined } from "@ant-design/icons";
+import logo from './logo.svg';
+import './App.css';
+import 'antd/dist/antd.css';
+import MainPage from './components/MainPage';
+import { Switch, Route, Link, useHistory } from 'react-router-dom';
+import UploadPage from './components/Upload';
+import ProducPage from './components/Product';
+import { Button } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
 
 function App() {
   const history = useHistory();
+
   return (
     <div className="App">
       <div id="header">
@@ -20,7 +21,7 @@ function App() {
           <Button
             size="large"
             onClick={function () {
-              history.push("/upload"); // 해당 경로에서 다른경로로 이동
+              history.push('/upload'); // 해당 경로에서 다른경로로 이동
             }}
             icon={<DownloadOutlined />}
           >
@@ -30,13 +31,13 @@ function App() {
       </div>
       <div id="body">
         <Switch>
-          <Route exact={true} path={"/"}>
+          <Route exact={true} path={'/'}>
             <MainPage />
           </Route>
-          <Route exact={true} path={"/products/:id"}>
+          <Route exact={true} path={'/products/:id'}>
             <ProducPage />
           </Route>
-          <Route exact={true} path={"/upload"}>
+          <Route exact={true} path={'/upload'}>
             <UploadPage />
           </Route>
         </Switch>
