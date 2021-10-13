@@ -8,13 +8,16 @@ function UploadPage() {
     console.log(values);
   };
   const onChangeImage = (info) => {
+    console.log('onchangeImg');
+    console.log(info);
     if (info.file.status === 'uploading') {
       return;
     }
     if (info.file.status === 'done') {
-      const response = info.file.status;
+      const response = info.file.response;
       const imageUrl = response.imageUrl;
       setImageUrl(imageUrl);
+      console.log(imageUrl);
     }
   };
   return (
@@ -29,7 +32,7 @@ function UploadPage() {
             onChange={onChangeImage}
           >
             {imageUrl ? (
-              <img src={`http://localhost:8080:image${imageUrl}`} />
+              <img id="upload-image" src={`http://localhost:8080/${imageUrl}`} />
             ) : (
               <div id="upload-img-placeholder">
                 <img src="/images/icons/camera.png" />
